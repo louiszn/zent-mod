@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "xyz.louiszn.zent.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "betterMinecart.MinecartSpeedMixin",
+    "betterMinecart.AbstractMinecartEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
