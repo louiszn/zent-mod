@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import xyz.louiszn.zent.invoker.AbstractMinecartEntityInvoker;
+import xyz.louiszn.zent.mixin.invoker.AbstractMinecartEntityInvoker;
 import xyz.louiszn.zent.util.IDefaultMinecartController;
 import xyz.louiszn.zent.util.MoveIteration;
 

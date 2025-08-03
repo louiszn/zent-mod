@@ -1,4 +1,4 @@
-package xyz.louiszn.zent.invoker;
+package xyz.louiszn.zent.mixin.invoker;
 
 import net.minecraft.block.enums.RailShape;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;

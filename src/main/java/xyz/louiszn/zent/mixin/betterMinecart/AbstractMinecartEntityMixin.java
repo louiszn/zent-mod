@@ -21,25 +21,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import xyz.louiszn.zent.invoker.AbstractMinecartEntityInvoker;
+import xyz.louiszn.zent.mixin.invoker.AbstractMinecartEntityInvoker;
 import xyz.louiszn.zent.util.IDefaultMinecartController;
 
 @Mixin(AbstractMinecartEntity.class)
-public abstract class AbstractMinecartEntityMixin extends Entity implements AbstractMinecartEntityInvoker {
+public abstract class AbstractMinecartEntityMixin extends Entity {
     public AbstractMinecartEntityMixin(EntityType<?> type, World world) {
         super(type, world);
     }
-
-    @Invoker("moveOffRail")
-    public abstract void invokeMoveOffRail(ServerWorld world);
-    @Invoker("moveAlongTrack")
-    public abstract double invokeMoveAlongTrack(BlockPos pos, RailShape shape, double remainingDistance);
-    @Invoker("applySlowdown")
-    public abstract Vec3d invokeApplySlowdown(Vec3d velocity);
-    @Invoker("getMaxSpeed")
-    public abstract double invokeGetMaxSpeed(ServerWorld world);
-    @Invoker("moveOnRail")
-    public abstract void invokeMoveOnRail(ServerWorld world);
 
     @Shadow @Final
     private MinecartController controller;
