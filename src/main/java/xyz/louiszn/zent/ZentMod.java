@@ -17,9 +17,9 @@ public class ZentMod implements ModInitializer {
                 BiomeSelectors.foundInTheEnd(),
                 SpawnGroup.CREATURE,
                 EntityType.PHANTOM,
-                10,
+                5,
                 1,
-                2
+                1
         );
 
         LOGGER.info("Loaded zent mod!");
