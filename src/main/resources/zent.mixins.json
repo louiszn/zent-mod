@@ -2,11 +2,16 @@
   "required": true,
   "package": "xyz.louiszn.zent.mixin",
   "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "accessor.PhantomEntityAccessor",
+    "endPhantom.PhantomEntityMixin",
     "invoker.AbstractMinecartEntityInvoker"
+  ],
   "server": [
     "betterMinecart.AbstractMinecartEntityMixin",
     "betterMinecart.MinecartSpeedMixin",
-    "betterMinecart.AbstractMinecartEntityMixin"
+    "endPhantom.PhantomSpawnerMixin",
+    "endPhantom.ServerWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1
