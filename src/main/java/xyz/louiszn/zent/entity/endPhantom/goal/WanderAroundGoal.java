@@ -59,8 +59,7 @@ public class WanderAroundGoal extends Goal {
         BlockPos groundPos = phantom.getWorld().getTopPosition(net.minecraft.world.Heightmap.Type.MOTION_BLOCKING, new BlockPos((int) targetX, 0, (int) targetZ));
         double groundY = groundPos.getY();
 
-        // Bay cao ít nhất 1 block, có thể cao tùy RNG
-        double yOffset = 1.0 + random.nextDouble() * 20.0; // hoặc * 40.0 nếu muốn cao hơn
+        double yOffset = 1.0 + random.nextDouble() * 60.0;
         double targetY = groundY + yOffset;
 
         this.targetPosition = new Vec3d(targetX, targetY, targetZ);

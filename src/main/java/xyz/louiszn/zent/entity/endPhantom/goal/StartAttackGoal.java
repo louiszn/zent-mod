@@ -6,6 +6,7 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import xyz.louiszn.zent.entity.endPhantom.PhantomMovementType;
 import xyz.louiszn.zent.mixin.accessor.PhantomEntityAccessor;
@@ -53,13 +54,17 @@ public class StartAttackGoal extends Goal {
     private void startSwoop() {
         LivingEntity target = phantom.getTarget();
 
-        if (target == null) return;
+        if (target == null) {
+            return;
+        }
 
-        double heightOffset = 20 + phantom.getRandom().nextInt(20);
+        double baseHeightOffset = 30 + phantom.getRandom().nextInt(20);
+        BlockPos ground = phantom.getWorld().getTopPosition(net.minecraft.world.Heightmap.Type.MOTION_BLOCKING, target.getBlockPos());
+        double safeY = Math.max(ground.getY() + 1, target.getY() + baseHeightOffset);
 
         Vec3d swoopStart = new Vec3d(
                 target.getX(),
-                target.getY() + heightOffset,
+                safeY,
                 target.getZ()
         );
 
