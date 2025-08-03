@@ -1,6 +1,5 @@
 package xyz.louiszn.zent.entity.endPhantom.goal;
 
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.util.math.BlockPos;
