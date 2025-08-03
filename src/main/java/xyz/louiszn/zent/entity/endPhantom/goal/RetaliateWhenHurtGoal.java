@@ -33,13 +33,19 @@ public class RetaliateWhenHurtGoal extends Goal {
         lastAttacker = phantom.getAttacker();
         phantom.setTarget(lastAttacker);
 
-        if (!(phantom.getWorld() instanceof ServerWorld serverWorld)) return;
+        if (!(phantom.getWorld() instanceof ServerWorld serverWorld)) {
+            return;
+        }
 
         List<PhantomEntity> nearbyPhantoms = serverWorld.getEntitiesByClass(
                 PhantomEntity.class,
                 new Box(phantom.getBlockPos()).expand(32),
                 other -> other != phantom && other.getTarget() == null
         );
+
+        if (nearbyPhantoms.isEmpty()) {
+            return;
+        }
 
         int count = 1 + phantom.getRandom().nextInt(Math.min(3, nearbyPhantoms.size()));
 
