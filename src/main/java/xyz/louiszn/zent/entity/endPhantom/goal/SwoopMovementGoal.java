@@ -33,6 +33,10 @@ public class SwoopMovementGoal extends Goal {
     }
 
     @Override
+    public void start() {
+    }
+
+    @Override
     public boolean shouldContinue() {
         LivingEntity target = phantom.getTarget();
         if (target == null || !target.isAlive()) return false;

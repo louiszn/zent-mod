@@ -12,6 +12,9 @@ public interface PhantomEntityAccessor {
     @Accessor("targetPosition")
     void setTargetPosition(Vec3d position);
 
+    @Accessor("targetPosition")
+    Vec3d getTargetPosition();
+
     @Accessor("circlingCenter")
     BlockPos getCirclingCenter();
 }
